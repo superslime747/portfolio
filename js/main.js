@@ -1,7 +1,7 @@
 // js/main.js
 
 // ⚠️ ЗАМЕНИ на URL своего backend на Render
-const API_URL = 'https://portfolio-backend-xxxx.onrender.com';
+const API_URL = 'https://portfolio-backend-pxdb.onrender.com';
 
 // === Активный пункт меню ===
 document.addEventListener('DOMContentLoaded', () => {
