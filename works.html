@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Работы — Портфолио</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-item">
+      <span class="nav-label">Главная</span>
+      <span class="nav-icon">🏠</span>
+    </a>
+    <a href="works.html" class="nav-item active">
+      <span class="nav-label">Работы</span>
+      <span class="nav-icon">💼</span>
+    </a>
+    <a href="contact.html" class="nav-item">
+      <span class="nav-label">Связаться</span>
+      <span class="nav-icon">✉️</span>
+    </a>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title">Мои работы</h1>
+    <p class="page-subtitle">Проекты, которые я реализовал. Код доступен на GitHub.</p>
+
+    <div class="projects">
+
+      <!-- Проект 1: Курсовая -->
+      <article class="project-card">
+        <h3>📊 CSV Report Generator</h3>
+        <p class="project-desc">
+          Приложение для автоматического анализа CSV-файлов и генерации аналитических отчётов в формате Word.
+          Включает статистический анализ, построение графиков (гистограммы, тепловые карты, столбчатые диаграммы),
+          оценку качества данных, работу с пропущенными значениями и выбросами.
+          Есть GUI на PyQt5 с тёмной/светлой темой и консольный режим.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Pandas</span>
+          <span class="tech-tag">NumPy</span>
+          <span class="tech-tag">Matplotlib</span>
+          <span class="tech-tag">Seaborn</span>
+          <span class="tech-tag">PyQt5</span>
+          <span class="tech-tag">python-docx</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/твой_ник/csv-report-generator" target="_blank" class="btn btn-primary">Код на GitHub</a>
+        </div>
+      </article>
+
+      <!-- Проект 2: Сайт-портфолио -->
+      <article class="project-card">
+        <h3>🌐 Сайт-портфолио</h3>
+        <p class="project-desc">
+          Многостраничный адаптивный сайт с фиксированным меню, анимированными иконками навигации
+          и формой обратной связи. Свёрстан с нуля на чистом HTML, CSS и JavaScript.
+          Задеплоен на GitHub Pages.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">GitHub Pages</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/твой_ник/твой_ник.github.io" target="_blank" class="btn btn-primary">Код на GitHub</a>
+          <a href="index.html" class="btn btn-outline">Открыть сайт</a>
+        </div>
+      </article>
+
+      <!-- Сюда добавляй новые проекты по аналогии -->
+
+    </div>
+
+    <footer>© 2026 [Твоё Имя]. Все права защищены.</footer>
+  </main>
+
+</body>
+</html>

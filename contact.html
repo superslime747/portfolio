@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Связаться — Портфолио</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-item">
+      <span class="nav-label">Главная</span>
+      <span class="nav-icon">🏠</span>
+    </a>
+    <a href="works.html" class="nav-item">
+      <span class="nav-label">Работы</span>
+      <span class="nav-icon">💼</span>
+    </a>
+    <a href="contact.html" class="nav-item active">
+      <span class="nav-label">Связаться</span>
+      <span class="nav-icon">✉️</span>
+    </a>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title" style="text-align:center;">Связаться со мной</h1>
+    <p class="page-subtitle" style="text-align:center;">Заполните форму — заявка мгновенно придёт мне в Telegram</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label for="name">От кого поступило предложение *</label>
+        <input type="text" id="name" name="name"
+               placeholder="Ваше имя или название компании" required maxlength="100">
+      </div>
+
+      <div class="form-group">
+        <label for="method">Предпочтительный способ связи *</label>
+        <select id="method" name="method" required>
+          <option value="" disabled selected>Выберите способ связи</option>
+          <option value="telegram">Telegram</option>
+          <option value="max">Max</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="contact">Ваш контакт *</label>
+        <input type="text" id="contact" name="contact"
+               placeholder="@username, номер телефона или email" required maxlength="200">
+      </div>
+
+      <div class="form-group">
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message"
+                  placeholder="Опишите проект, задачу или вопрос..."
+                  maxlength="2000"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submitBtn"
+              style="width:100%; justify-content:center;">
+        Отправить сообщение
+      </button>
+
+      <p class="form-note">* — обязательные поля</p>
+    </form>
+
+    <footer>© 2026 Еремеев Б. Все права защищены.</footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
