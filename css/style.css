@@ -29,42 +29,44 @@ body {
   top: 24px;
   right: 24px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 6px;
   z-index: 100;
 }
 
 .nav-item {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0;
+  justify-content: center;
   text-decoration: none;
   color: var(--text);
   cursor: pointer;
-  transition: gap 0.3s ease;
 }
 
-/* При наведении — иконка отодвигается влево, появляется текст */
-.nav-item:hover {
-  gap: 10px;
-}
-
+/* Текст снизу от иконки */
 .nav-item .nav-label {
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  font-size: 14px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -6px);
+  margin-top: 8px;
+  font-size: 12px;
   white-space: nowrap;
   background: var(--bg-card);
   padding: 4px 10px;
   border-radius: 6px;
   border: 1px solid var(--border);
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-item:hover .nav-label {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(-50%, 0);
 }
 
 .nav-icon {
@@ -76,19 +78,31 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  font-size: 20px;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   flex-shrink: 0;
+  color: #b0b0b0;
+}
+
+.nav-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .nav-item:hover .nav-icon {
   background: var(--accent);
   border-color: var(--accent);
+  color: #ffffff;
 }
 
 .nav-item.active .nav-icon {
   background: var(--accent);
   border-color: var(--accent);
+  color: #ffffff;
 }
 
 /* === Контент === */
@@ -138,6 +152,10 @@ body {
 
 .about-text p {
   margin-bottom: 12px;
+}
+
+.about-text strong {
+  color: var(--text);
 }
 
 .skills {
@@ -224,13 +242,43 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px;
+  overflow: hidden;
   transition: transform 0.2s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
+}
+
+/* Горизонтальная раскладка: слева скрин, справа текст */
+.project-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.project-image-col {
+  flex: 0 0 320px;
+  max-width: 320px;
+}
+
+.project-main-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #181818;
+  display: block;
+}
+
+.project-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
 .project-card h3 {
@@ -264,6 +312,7 @@ body {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .project-links .btn {
@@ -271,11 +320,78 @@ body {
   font-size: 13px;
 }
 
-.project-image {
-  width: 100%;
-  border-radius: 8px;
+/* Развёрнутая часть проекта */
+.project-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.project-details.expanded {
+  max-height: 2000px;
+}
+
+.project-details-inner {
+  padding: 16px 24px 24px;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+}
+
+.project-details-inner h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: var(--accent);
+  margin-top: 16px;
+}
+
+.project-details-inner h4:first-child {
+  margin-top: 0;
+}
+
+.project-details-inner p {
+  color: var(--text-muted);
+  font-size: 14px;
   margin-bottom: 16px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
   border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  border-color: var(--accent);
+}
+
+/* Карточка проекта без картинки (вертикальная) */
+.project-card--no-image .project-body {
+  padding: 24px;
+}
+
+.project-card--no-image h3 {
+  margin-bottom: 12px;
+}
+
+.project-details-inner code {
+  background: #181818;
+  color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  font-size: 13px;
 }
 
 /* === Контакты === */
@@ -352,6 +468,7 @@ body {
   opacity: 0;
   transition: all 0.4s ease;
   z-index: 200;
+  pointer-events: none;
 }
 
 .toast.show {
@@ -369,15 +486,27 @@ footer {
   margin-top: 60px;
 }
 
-/* Адаптив */
+/* === Адаптив === */
+@media (max-width: 700px) {
+  .project-layout {
+    flex-direction: column;
+  }
+  .project-image-col {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  .project-main-image {
+    height: 200px;
+  }
+}
+
 @media (max-width: 600px) {
   .nav {
     top: 12px;
     right: 12px;
     flex-direction: row;
-  }
-  .nav-item:hover {
-    gap: 0;
+    gap: 6px;
   }
   .nav-item .nav-label {
     display: none;
