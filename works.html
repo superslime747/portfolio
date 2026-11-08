@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <nav class="nav">
     <a href="index.html" class="nav-item">
       <span class="nav-icon">
@@ -41,13 +49,15 @@
   </nav>
 
   <main class="container">
-    <h1 class="page-title">Мои работы</h1>
-    <p class="page-subtitle">Проекты, которые я реализовал. Код доступен на GitHub.</p>
+    <header class="page-header reveal">
+      <h1 class="page-title">Мои работы</h1>
+      <p class="page-subtitle">Проекты, которые я реализовал. Код доступен на GitHub.</p>
+    </header>
 
     <div class="projects">
 
       <!-- Проект 1: CSV Report Generator -->
-      <article class="project-card">
+      <article class="project-card reveal">
         <div class="project-layout">
           <div class="project-image-col">
             <img src="images/project-csv-main.png" alt="CSV Report Generator" class="project-main-image">
@@ -66,7 +76,7 @@
               <span class="tech-tag">python-docx</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/superslime747/csv-report-generator" target="_blank" class="btn btn-primary">Код на GitHub</a>
+              <a href="https://github.com/superslime747/csv-report-generator" target="_blank" rel="noopener" class="btn btn-primary">Код на GitHub</a>
               <button class="btn btn-outline" onclick="toggleDetails(this)">Подробнее ▼</button>
             </div>
           </div>
@@ -87,8 +97,8 @@
         </div>
       </article>
 
-      <!-- Проект 2: Trudvsem Parser (2 картинки, без Excel) -->
-      <article class="project-card">
+      <!-- Проект 2: Trudvsem Parser -->
+      <article class="project-card reveal">
         <div class="project-layout">
           <div class="project-image-col">
             <img src="images/project-parser-main.png" alt="Trudvsem Parser" class="project-main-image">
@@ -107,7 +117,7 @@
               <span class="tech-tag">pandas</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/superslime747/trudvsem-parser" target="_blank" class="btn btn-primary">Код на GitHub</a>
+              <a href="https://github.com/superslime747/trudvsem-parser" target="_blank" rel="noopener" class="btn btn-primary">Код на GitHub</a>
               <button class="btn btn-outline" onclick="toggleDetails(this)">Подробнее ▼</button>
             </div>
           </div>
@@ -127,26 +137,74 @@
         </div>
       </article>
 
-      <!-- Проект 3: Сайт с Telegram-интеграцией (без картинок) -->
-      <article class="project-card project-card--no-image">
-        <div class="project-body">
-          <h3>🌐 Сайт-портфолио с Telegram-интеграцией</h3>
-          <p class="project-desc">
-            Многостраничный сайт с формой обратной связи. Заявки с формы
-            моментально приходят в Telegram через Flask API.
-          </p>
-          <div class="project-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">Telegram API</span>
-            <span class="tech-tag">GitHub Pages</span>
-            <span class="tech-tag">Render</span>
+      <!-- Проект 3: Gesture App (без галереи, только 1 изображение на карточке) -->
+      <article class="project-card reveal">
+        <div class="project-layout">
+          <div class="project-image-col">
+            <img src="images/project-gesture-main.png" alt="Gesture App" class="project-main-image">
           </div>
-          <div class="project-links">
-            <a href="https://github.com/superslime747/portfolio" target="_blank" class="btn btn-primary">Код на GitHub</a>
-            <button class="btn btn-outline" onclick="toggleDetails(this)">Подробнее ▼</button>
+          <div class="project-body">
+            <h3>🖐 Gesture App</h3>
+            <p class="project-desc">
+              Десктопное приложение на Python, которое управляет компьютером через веб-камеру.
+              Работает локально и офлайн, без платных API.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">MediaPipe</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">DeepFace</span>
+              <span class="tech-tag">CustomTkinter</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/superslime747" target="_blank" rel="noopener" class="btn btn-primary">Код на GitHub</a>
+              <button class="btn btn-outline" onclick="toggleDetails(this)">Подробнее ▼</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-details">
+          <div class="project-details-inner">
+            <h4>Режимы работы</h4>
+            <p>
+              🎮 <strong>Игра КНБ</strong> — играете против ИИ, показывая жесты рукой.<br>
+              🖱 <strong>Виртуальная мышь</strong> — управление курсором жестами (движение, клики, drag, скролл).<br>
+              😀 <strong>Лицо и эмоции</strong> — распознавание людей по фото и их эмоций.<br>
+              👁 <strong>Управление глазами</strong> — курсор следует за взглядом, подмигивание = клик.
+            </p>
+
+            <h4>Особенности</h4>
+            <p>Производительность 25–35 FPS, полностью офлайн, обучается на ваших данных, MIT-лицензия. Управление компьютером без клавиатуры и мыши через компьютерное зрение.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Проект 4: Сайт с Telegram-интеграцией (теперь с изображением) -->
+      <article class="project-card reveal">
+        <div class="project-layout">
+          <div class="project-image-col">
+            <img src="images/project-portfolio-main.png" alt="Сайт-портфолио с Telegram-интеграцией" class="project-main-image">
+          </div>
+          <div class="project-body">
+            <h3>🌐 Сайт-портфолио с Telegram-интеграцией</h3>
+            <p class="project-desc">
+              Многостраничный сайт с формой обратной связи. Заявки с формы
+              моментально приходят в Telegram через Flask API.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">Telegram API</span>
+              <span class="tech-tag">GitHub Pages</span>
+              <span class="tech-tag">Render</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/superslime747/portfolio" target="_blank" rel="noopener" class="btn btn-primary">Код на GitHub</a>
+              <button class="btn btn-outline" onclick="toggleDetails(this)">Подробнее ▼</button>
+            </div>
           </div>
         </div>
 
@@ -173,6 +231,13 @@
 
     <footer>© 2026 Еремеев Б. Все права защищены.</footer>
   </main>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
   <script src="js/main.js"></script>
   <script>

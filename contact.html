@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <nav class="nav">
     <a href="index.html" class="nav-item">
       <span class="nav-icon">
@@ -41,10 +49,12 @@
   </nav>
 
   <main class="container">
-    <h1 class="page-title" style="text-align:center;">Связаться со мной</h1>
-    <p class="page-subtitle" style="text-align:center;">Заполните форму — заявка мгновенно придёт мне в Telegram</p>
+    <header class="page-header reveal">
+      <h1 class="page-title">Связаться со мной</h1>
+      <p class="page-subtitle">Заполните форму — заявка мгновенно придёт мне в Telegram</p>
+    </header>
 
-    <form class="contact-form" id="contactForm">
+    <form class="contact-form reveal" id="contactForm" novalidate>
       <div class="form-group">
         <label for="name">От кого поступило предложение *</label>
         <input type="text" id="name" name="name"
@@ -74,9 +84,8 @@
                   maxlength="2000"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary" id="submitBtn"
-              style="width:100%; justify-content:center;">
-        Отправить сообщение
+      <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+        <span class="btn-text">Отправить сообщение</span>
       </button>
 
       <p class="form-note">* — обязательные поля</p>
@@ -86,6 +95,7 @@
   </main>
 
   <div class="toast" id="toast"></div>
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
 
   <script src="js/main.js"></script>
 </body>

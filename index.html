@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Портфолио Богдана — Python-разработчик, веб и данные">
   <title>Главная — Портфолио</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Анимированный фон -->
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- Свечение за курсором -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
   <nav class="nav">
     <a href="index.html" class="nav-item active">
@@ -41,15 +52,35 @@
   </nav>
 
   <main class="container">
-    <section class="hero">
-      <img src="images/avatar.jpg" alt="Моё фото" class="avatar">
-      <h1>Привет, я Богдан</h1>
-      <p class="subtitle">Python-разработчик · Веб-разработка · Работа с данными</p>
+
+    <section class="hero reveal">
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <img src="images/avatar.jpg" alt="Моё фото" class="avatar">
+      </div>
+      <span class="hero-badge">● Открыт к проектам</span>
+      <h1 class="hero-title">Привет, я <span class="gradient-text">Богдан</span></h1>
+      <p class="subtitle" id="typewriter" data-text="Python-разработчик · Веб-разработка · Работа с данными"></p>
 
       <div class="about-text">
         <p>Разрабатываю программы и веб-приложения на <strong>Python</strong>. Работаю с данными — от сбора и обработки до анализа и визуализации. Создаю десктопные приложения, интегрирую внешние сервисы через API, пишу скрипты автоматизации и делаю сайты.</p>
-        <p>Свободно ориентируюсь в современных технологиях и быстро осваиваю новые инструменты под конкретную задачу. Пишу чистый, читаемый код с логированием и разделением на модули — так, чтобы его было легко поддерживать и расширять.</p>
+        <p>Свободно ориентируюсь в современных технологиях и быстро осваиваю новые инструменты под конкретную задачу. Пишу чистый, читаемый код с логированием и разделением на модули.</p>
         <p>Открыт к проектам разного масштаба: от небольших скриптов автоматизации до полноценных веб-приложений и интеграций с внешними сервисами.</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">проектов</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="8">0</span>
+          <span class="stat-label">технологий</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="100">0</span>
+          <span class="stat-label">% вовлечённость</span>
+        </div>
       </div>
 
       <div class="skills">
@@ -58,6 +89,8 @@
         <span class="skill-tag">SQL</span>
         <span class="skill-tag">Flask</span>
         <span class="skill-tag">PyQt5</span>
+        <span class="skill-tag">OpenCV</span>
+        <span class="skill-tag">MediaPipe</span>
         <span class="skill-tag">HTML / CSS</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">Git</span>
@@ -72,5 +105,8 @@
     <footer>© 2026 Еремеев Б. Все права защищены.</footer>
   </main>
 
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
